@@ -1,0 +1,25 @@
+{
+  "name": "9-express-avanzado-parte2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moruezabal/desafio9BE.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moruezabal/desafio9BE/issues"
+  },
+  "homepage": "https://github.com/moruezabal/desafio9BE#readme",
+  "description": ""
+}
