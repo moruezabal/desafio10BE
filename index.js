@@ -1,16 +1,25 @@
 import express from 'express';
-import Inventario from './Inventario.js'
+import Inventario from './Inventario.js';
+import handlebars from 'express-handlebars';
 
 const app = express();
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-
-
 const router = express.Router();
 
 app.use('/api', router);
 app.use(express.static('public'));
+
+app.engine("hbs", handlebars({
+    extname: "hbs",
+    defaultLayout: "index.hbs",
+    layoutsDir: "/views/layouts",
+    partialsDir: "/views/partials" 
+}))
+
+app.set("view engine", "hbs");
+app.set("views", "./views");
 
 let almacen = new Inventario();
 
