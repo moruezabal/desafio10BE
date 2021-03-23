@@ -23,7 +23,7 @@ let almacen = new Inventario();
 router.get('/productos/vista', (req, res) => {
     let productos = almacen.getProductos();
     res.render("productos.pug", {
-        mensaje : productos,
+        listProductos : productos,
         hayProductos: productos.length != 0,
         name: "Fabián", //No lo pedía, decorativo
     })
