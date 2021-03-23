@@ -1,6 +1,5 @@
 import express from 'express';
 import Inventario from './Inventario.js';
-import handlebars from 'express-handlebars';
 import { join } from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
