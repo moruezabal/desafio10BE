@@ -1,8 +1,8 @@
 import express from 'express';
 import Inventario from './Inventario.js';
-import { join } from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -15,22 +15,15 @@ const router = express.Router();
 app.use('/api', router);
 app.use(express.static('public'));
 
-app.engine("hbs", handlebars({
-    extname: "hbs",
-    defaultLayout: "index.hbs",
-    layoutsDir: join(__dirname, "/views/layouts"),
-    partialsDir: join(__dirname, "/views/partials"),
-}))
-
-app.set("view engine", "hbs");
+app.set("view engine", "pug");
 app.set("views", "./views");
 
 let almacen = new Inventario();
 
 router.get('/productos/vista', (req, res) => {
     let productos = almacen.getProductos();
-    res.render("main", {
-        listProductos : productos,
+    res.render("productos.pug", {
+        mensaje : productos,
         hayProductos: productos.length != 0,
         name: "Fabián", //No lo pedía, decorativo
     })
