@@ -30,12 +30,10 @@ let almacen = new Inventario();
 
 router.get('/productos/vista', (req, res) => {
     let productos = almacen.getProductos();
-    let pathStyle = join(__dirname, "/public/estilos.css");
     res.render("main", {
         listProductos : productos,
         hayProductos: productos.length != 0,
         name: "Fabián", //No lo pedía, decorativo
-        style: pathStyle
     })
     
 })
