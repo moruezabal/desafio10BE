@@ -1,0 +1,27 @@
+
+<div class="container-sm">
+    <h1 class="d-flex justify-content-center">Lista de productos de {{name}}</h1>
+    <table class="table table-striped d-flex justify-content-center">
+        <tr>
+            <td class="align-middle">Nombre</td>
+            <td class="align-middle">Precio</td>
+            <td class="align-middle">Foto</td>
+        </tr>
+        {{#if hayProductos}}
+            {{#each listProductos}}
+            <tr>
+                <td class="align-middle">{{this.title}}</td>
+                <td class="align-middle">{{this.price}}</td>
+                <td class="align-middle"><img class="img-thumbnail" src="{{this.thumbnail}}"></td>
+            </tr>
+            {{/each}}
+        {{else}}
+            <tr>
+                <td>No hay productos</td>
+            </tr>
+        {{/if}}
+    </table>
+</div>
+
+
+
